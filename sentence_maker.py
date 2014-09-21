@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import nltk
 import sys
 import random
@@ -50,7 +52,7 @@ class Model:
 
 
     def jointokens(self,tokens,n):
-        specials = [".",",","?"]
+        specials = [".",",","?","!","”","'"]
         stripme = ["**START** ", " **END**"]
         sentence = ' '.join(tokens)
         for char in specials:
@@ -92,7 +94,7 @@ class Model:
 
 
 # create statistical model for sentences
-for n in range(2, 6):
+for n in range(2, 4):
     print "\nn-gram size where n="+str(n)+"\n-------------"
     model = Model(tok_sents, 3)
     for x in range(0, 10):
